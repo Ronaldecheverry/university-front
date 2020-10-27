@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="./assets/angular-icon.svg" width="30" height="30" alt="">
+    University</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"  [routerLink]="[ '/course-list']"> Courses </a>
+      </li>
+      
+      <li class="nav-item active">
+        <a class="nav-link"  [routerLink]="[ '/student-list']"> Students </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link"  [routerLink]="[ '/instructor-list']"> Instructors </a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link"  [routerLink]="[ '/department-list']"> Departments </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+
+<!-- <div class="container">
+<div class="jumbotron">
+  <h1 class="display-4">Welcome!</h1>
+  <p class="lead">
+    This is a simple test on how an angular project works, based on an api exposed on the Information Service server.
+  </p>
+  <br>
+  <p class="lead">
+    Next, you find items such as courses, students, instructors and departments, where the functionality of the crud is fulfilled and their data management is evidenced.
+  </p>
+  <hr class="my-4">
+  <p>You are welcome and enjoy the content.</p>
+  
+</div>
+</div> -->
+<router-outlet></router-outlet>

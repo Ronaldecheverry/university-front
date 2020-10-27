@@ -1,0 +1,55 @@
+<div class="container">
+
+    <h2>Delete Instructor</h2>
+    <div class="form-row" *ngIf="!showMsg">
+        <div class="alert alert-danger col-md-12" role="alert">
+          Are u sure? Really?
+          <br>
+          <div class="btn-group" role="group">
+              <button class="btn btn-outline-danger btn-sm" (click)="delete()">Delete </button>
+              <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/instructor-list']">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+          {{msg}}
+          <br>
+          <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/instructor-list']">Back</a>
+        </div>
+      </div>
+
+    <form #instructorForm= "ngForm" *ngIf="instructor">
+        <div class="form-row">
+            
+            <div class="col-md-3">
+                <label>Id:</label>
+                <input type="text" id="Id" name="Id" placeholder="Enter the Id " class="form-control"
+                    [(ngModel)]="instructor.ID" readonly >
+            </div>
+            
+            <div class="col-md-3">
+                <label>First MidName:</label>
+                <input type="text" id="FirstMidName" name="FirstMidName" placeholder="Enter the FirstMidName " class="form-control"
+                    [(ngModel)]="instructor.FirstMidName" readonly>
+            </div>
+
+            <div class="col-md-3">
+                <label>Last Name:</label>
+                <input type="text" id="LastName" name="LastName" placeholder="Enter the LastName " class="form-control"
+                    [(ngModel)]="instructor.LastName" readonly>
+            </div>
+
+            <div class="col-md-3">
+                <label>HireDate:</label>
+                <input type="date" id="HireDate" name="HireDate" placeholder="Enter the HireDate"
+                    class="form-control" [(ngModel)]="instructor.HireDate" readonly>
+            </div>
+
+        </div>
+
+    </form>
+
+
+</div>

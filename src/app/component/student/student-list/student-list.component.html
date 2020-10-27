@@ -1,0 +1,36 @@
+<div class="container">
+   <br>
+   <h1><span class="badge badge-success">Students</span></h1>
+    
+    <a class="btn btn-outline-success btn-sm" [routerLink]="[ '/student-save' ]">Create New</a>
+    <br>
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+    <tr>
+      <th scope="col">EnrollmentDate</th>
+      <th scope="col">ID</th>
+      <th scope="col">First MidName</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Function</th>
+    </tr>
+      </thead>
+      <tbody>
+    <tr *ngFor="let item of students">
+       <td>{{ item.EnrollmentDate }}</td>
+       <td>{{ item.ID }}</td>
+       <td>{{ item.FirstMidName }}</td>
+       <td>{{ item.LastName }}</td>
+       <td>
+          <div class="btn-group" role="group">
+          <a class="btn btn-sm btn-outline-success"  [routerLink]="[ '/student-edit', item.ID ]">Edit</a>
+          <a class="btn btn-sm btn-outline-danger"  [routerLink]="[ '/student-delete', item.ID ]">Delete</a>
+       </div>
+       </td>
+    
+    
+    </tr>
+   </tbody>
+    </table>
+    
+    
+    </div>

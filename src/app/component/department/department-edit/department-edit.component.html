@@ -1,0 +1,62 @@
+<div class="container">
+
+    <h2>Edit Department</h2>
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+
+    <form #departmentForm="ngForm" *ngIf="department">
+        <div class="form-row">
+
+            <div class="col-md-4">
+                <label>Id:</label>
+                <input type="text" id="ID" name="ID" placeholder="Enter the Id " class="form-control"
+                    [(ngModel)]="department.DepartmentID" readonly>
+            </div>
+
+            <div class="col-md-4">
+                <label>Name:</label>
+                <input type="text" id="Name" name="Name" placeholder="Enter the Name " class="form-control"
+                    [(ngModel)]="department.Name">
+            </div>
+
+            <div class="col-md-4">
+                <label>Budget:</label>
+                <input type="text" id="Budget" name="Budget" placeholder="Enter the Budget " class="form-control"
+                    [(ngModel)]="department.Budget">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4">
+                <label>Start Date:</label>
+                <input type="date" id="StartDate" name="StartDate" class="form-control"
+                    [(ngModel)]="department.StartDate">
+            </div>
+
+            <div class="col-md-4">
+                <label>Instructor ID:</label>
+                <select class="form-control" id="InstructorID" name="InstructorID"
+                    [(ngModel)]="department.InstructorID">
+
+                    <option *ngFor="let item of instructors" [value]="item.ID"> {{item.FirstMidName}} {{item.LastName}}
+                    </option>
+
+
+                </select>
+
+
+            </div>
+
+        </div>
+        <br>
+        <div class="btn-group" role="group">
+            <button class="btn btn-outline-primary btn-sm" (click)="edit()">Edit </button>
+            <a class="btn btn-outline-primary btn-sm" [routerLink]="[ '/department-list']">Back</a>
+        </div>
+
+    </form>
+
+
+</div>
